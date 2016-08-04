@@ -24,7 +24,6 @@
   import SiteHeader from './components/SiteHeader';
   import RecipesList from './components/RecipesList';
   import SmallTeaser from './components/SmallTeaser';
-  import store from './store';
 
   export default {
     data() {
@@ -93,11 +92,6 @@
     },
     components: {
       Hello, SiteHeader, RecipesList, SmallTeaser,
-    },
-    methods: {
-      test() {
-        store.addCategory();
-      },
     },
   };
 </script>
