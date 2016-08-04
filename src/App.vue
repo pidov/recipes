@@ -1,22 +1,21 @@
 <template>
   <div id="app">
     <site-header :navigation-items="menuItems"></site-header>
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <recipes-list></recipes-list>
     <div class="cs-recipe-top-categories">
       <div class="cs-container">
         <h3 class="cs-headline"><span>Recipe categories</span></h3>
         <div class="cs-row">
-          <div class="cs-col cs-col-4-of-12">
+          <div v-for="teaser in teasers" class="cs-col cs-col-4-of-12">
           <small-teaser
-            title="Musakinq"
-            image="http://www.freedigitalphotos.net/images/img/homepage/87357.jpg"
-            url="http://google.com"></small-teaser>
+            :title="teaser.title"
+            :subtitle="teaser.subtitle"
+            :background-image="teaser.backgroundImage"
+            :permalink="teaser.permalink"></small-teaser>
           </div>
         </div>
       </div>
     </div>
+    <recipes-list :recipes="recipes"></recipes-list>
   </div>
 </template>
 
@@ -30,6 +29,36 @@
   export default {
     data() {
       return {
+        recipes: [{
+          title: ' Musaka',
+          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          permalink: 'http://google.com',
+        }, {
+          title: 'Musakata',
+          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          permalink: 'http://google.com',
+        }, {
+          title: 'Musaka',
+          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          permalink: 'http://google.com',
+        }, {
+          title: 'Musakata',
+          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          permalink: 'http://google.com',
+        }],
+        teasers: [{
+          title: ' Musaka',
+          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          permalink: 'http://google.com',
+        }, {
+          title: 'Musakata',
+          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          permalink: 'http://google.com',
+        }, {
+          title: 'Musaka',
+          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          permalink: 'http://google.com',
+        }],
         menuItems: [{
           title: 'Home',
           url: '#',
