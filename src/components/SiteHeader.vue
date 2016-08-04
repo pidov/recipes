@@ -9,7 +9,7 @@
           <div id="cs-logo-brand">
             <a href="index.html"><img src="/static/main_files/demo/Bakery.png" alt="Bakery"></a>
           </div><!-- end .cs-logo-brand -->
-          <main-navigation></main-navigation>
+          <main-navigation :items="navigationItems"></main-navigation>
         </div>
       </div>
     </div>
@@ -20,6 +20,7 @@
 <script>
   import MainNavigation from './MainNavigation';
   export default {
+    props: ['navigationItems'],
     components: {
       MainNavigation,
     },
