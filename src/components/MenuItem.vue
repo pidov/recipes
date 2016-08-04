@@ -1,7 +1,8 @@
 <template>
-<li>
+<li class="kurec" v-bind:class="{ 'current-menu-item': isActive, }">
   <a href="{{url}}">
-    <span>{{title}}</span>
+    <span v-if="children">{{title}}</span>
+    <template v-if="!children">{{title}}</template>
   </a>
   <ul class="sub-menu" v-if="children">
     <menu-item
@@ -16,6 +17,6 @@
 <script>
 export default {
   name: 'menu-item',
-  props: ['title', 'url', 'children'],
+  props: ['title', 'url', 'children', 'isActive'],
 };
 </script>

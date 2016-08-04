@@ -12,7 +12,8 @@
           v-for="item in menuItems"
           :title="item.title"
           :url="item.url"
-          :children="item.children"></menu-item>
+          :children="item.children"
+          :is-active="item.active"></menu-item>
       </ul>
     </nav>
   </div>
@@ -26,7 +27,7 @@ export default {
   data() {
     return {
       menuItems: [{
-        title: 'Homepages',
+        title: 'Home',
         url: '#',
         children: [{
           title: 'Sub one',
@@ -34,13 +35,18 @@ export default {
           children: [{
             title: 'Going deep',
             url: 'Deeper!',
+            children: [{
+              title: 'Next Level',
+              url: 'Deeper!',
+            }],
           }],
         }, {
           title: 'Sub Twone',
           url: '#SubOne',
         }],
       }, {
-        title: 'Second Top',
+        title: 'About',
+        active: true,
         url: 'SecondURL',
         children: [{
           title: 'Sub one',
