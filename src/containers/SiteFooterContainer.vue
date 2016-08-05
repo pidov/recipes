@@ -4,11 +4,11 @@
           <div class="cs-row">
               <div class="cs-col cs-col-4-of-12">
                   <!-- Widget tags -->
-                  <tag-cloud
+                  <tag-cloud-widget
                     :title="tagCloud.title"
                     :tags="tagCloud.tags"
                   >
-                  </tag-cloud>
+                </tag-cloud-widget>
               </div>
               <div class="cs-col cs-col-4-of-12">
                   <aside class="widget">
@@ -48,7 +48,6 @@
                   :title="categories.title",
                   :items="categories.items"
                 >
-
                 </list-widget>
               </div>
           </div>
@@ -57,12 +56,12 @@
 </template>
 
 <script>
-  import TagCloud from '../components/TagCloudWidget';
+  import TagCloudWidget from '../components/TagCloudWidget';
   import ListWidget from '../components/ListWidget';
 
   export default {
     components: {
-      TagCloud, ListWidget,
+      TagCloudWidget, ListWidget,
     },
     data() {
       return {
