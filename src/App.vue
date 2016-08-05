@@ -16,7 +16,7 @@
 <script>
   import Hello from './components/Hello';
   import SiteHeader from './components/SiteHeader';
-  import RecipesList from './components/RecipesList';
+  import RecipesList from './containers/RecipesListContainer';
   import CategoriesContainer from './containers/CategoriesContainer';
 
   export default {

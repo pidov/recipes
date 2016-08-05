@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import RecipeTeaser from './RecipeTeaser';
+  import RecipeTeaser from '../components/RecipeTeaser';
 
   export default {
     props: ['recipes'],
