@@ -1,21 +1,15 @@
 <template>
   <div id="app">
-    <site-header :navigation-items="menuItems"></site-header>
-    <div class="cs-recipe-top-categories">
-      <div class="cs-container">
-        <h3 class="cs-headline"><span>Recipe categories</span></h3>
-        <div class="cs-row">
-          <div v-for="teaser in teasers" class="cs-col cs-col-4-of-12">
-          <small-teaser
-            :title="teaser.title"
-            :subtitle="teaser.subtitle"
-            :background-image="teaser.backgroundImage"
-            :permalink="teaser.permalink"></small-teaser>
-          </div>
-        </div>
-      </div>
-    </div>
-    <recipes-list :recipes="recipes"></recipes-list>
+    <site-header
+      :navigation-items="menuItems">
+    </site-header>
+    <categories-container
+      :categories="teasers"
+      title="Recipe Categories">
+    </categories-container>
+    <recipes-list
+      :recipes="recipes">
+    </recipes-list>
   </div>
 </template>
 
@@ -23,39 +17,39 @@
   import Hello from './components/Hello';
   import SiteHeader from './components/SiteHeader';
   import RecipesList from './components/RecipesList';
-  import SmallTeaser from './components/SmallTeaser';
+  import CategoriesContainer from './containers/CategoriesContainer';
 
   export default {
     data() {
       return {
         recipes: [{
           title: ' Musaka',
-          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          backgroundImage: 'https://placehold.it/600x600',
           permalink: 'http://google.com',
         }, {
           title: 'Musakata',
-          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          backgroundImage: 'https://placehold.it/600x600',
           permalink: 'http://google.com',
         }, {
           title: 'Musaka',
-          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          backgroundImage: 'https://placehold.it/600x600',
           permalink: 'http://google.com',
         }, {
           title: 'Musakata',
-          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          backgroundImage: 'https://placehold.it/600x600',
           permalink: 'http://google.com',
         }],
         teasers: [{
           title: ' Musaka',
-          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          backgroundImage: 'https://placehold.it/328x120',
           permalink: 'http://google.com',
         }, {
           title: 'Musakata',
-          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          backgroundImage: 'https://placehold.it/328x120',
           permalink: 'http://google.com',
         }, {
           title: 'Musaka',
-          backgroundImage: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
+          backgroundImage: 'https://placehold.it/328x120',
           permalink: 'http://google.com',
         }],
         menuItems: [{
@@ -91,7 +85,7 @@
       };
     },
     components: {
-      Hello, SiteHeader, RecipesList, SmallTeaser,
+      Hello, SiteHeader, RecipesList, CategoriesContainer,
     },
   };
 </script>
