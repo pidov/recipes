@@ -4,7 +4,9 @@
   <!-- Main content -->
   <div class="cs-main-content">
     <!-- Recipes category -->
-    <h3 class="cs-headline"><span>Popular recipes</span></h3>
+    <h3 class="cs-headline">
+      <span>{{title}}</span>
+    </h3>
     <div class="cs-recipes-category four-recipes">
       <ul class="cs-recipes">
         <!-- Recipe -->
@@ -26,7 +28,7 @@
   import RecipeTeaser from '../components/RecipeTeaser';
 
   export default {
-    props: ['recipes'],
+    props: ['recipes', 'title'],
     components: {
       RecipeTeaser,
     },
