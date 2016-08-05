@@ -11,43 +11,16 @@
                 </tag-cloud-widget>
               </div>
               <div class="cs-col cs-col-4-of-12">
-                  <aside class="widget">
-                      <h2 class="widget-title"><span>Latest posts</span></h2>
-                      <div class="cs-widget_latest_posts">
-                          <!-- Post item -->
-                          <div class="cs-post-item">
-                              <div class="cs-post-thumb">
-                                  <a href="post_standard.html"><img src="/static/main_files/demo/widgets/2.jpg" alt="Bakery"></a>
-                              </div>
-                              <div class="cs-post-inner">
-                                  <h3><a href="post_standard.html">Baked Coconut Tenders with Strawberry-Mango Salsa</a></h3>
-                                  <div class="cs-post-meta">
-                                      <span class="cs-post-meta-category"><a href="blog_category.html">Food</a></span>
-                                      <span class="cs-post-meta-comments"><a href="post_standard.html">6 Comments</a></span>
-                                  </div>
-                              </div>
-                          </div>
-                          <!-- Post item -->
-                          <div class="cs-post-item">
-                              <div class="cs-post-thumb">
-                                  <a href="post_standard.html"><img src="/static/main_files/demo/widgets/1.jpg" alt="Bakery"></a>
-                              </div>
-                              <div class="cs-post-inner">
-                                  <h3><a href="post_standard.html">Herbed Chicken With Beets and Brussels</a></h3>
-                                  <div class="cs-post-meta">
-                                      <span class="cs-post-meta-category"><a href="blog_category.html">Recipes</a></span>
-                                      <span class="cs-post-meta-comments"><a href="post_standard.html">13 Comments</a></span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </aside>
+                <latest-posts-widget
+                  :title="posts.title"
+                  :posts="posts.data">
+                </latest-posts-widget>
               </div>
               <div class="cs-col cs-col-4-of-12">
                 <list-widget
-                  :title="categories.title",
-                  :items="categories.items"
-                >
+                  :title="categories.title"
+                  :nested="categories.nested"
+                  :items="categories.items">
                 </list-widget>
               </div>
           </div>
@@ -58,17 +31,55 @@
 <script>
   import TagCloudWidget from '../components/TagCloudWidget';
   import ListWidget from '../components/ListWidget';
+  import LatestPostsWidget from '../components/LatestPostsWidget';
 
   export default {
     components: {
-      TagCloudWidget, ListWidget,
+      TagCloudWidget, ListWidget, LatestPostsWidget,
     },
     data() {
       return {
+        posts: {
+          title: 'LatestPosts',
+          data: [{
+            title: 'My cool post with two lines of content',
+            permalink: 'http://google.com',
+            image: {
+              url: 'https://placehold.it/500x300',
+              alt: 'Alternative',
+            },
+            comments: {
+              count: 6,
+              permalink: 'http://google.com/',
+            },
+            category: {
+              title: 'Cool Category',
+              permalink: 'http://localhost.com/',
+            },
+          }, {
+            title: 'My cool post',
+            permalink: 'http://google.com',
+            image: {
+              url: 'https://placehold.it/500x300',
+              alt: 'Alternative',
+            },
+            comments: {
+              count: 6,
+              permalink: 'http://google.com/',
+            },
+            category: {
+              title: 'Cool Category',
+              permalink: 'http://localhost.com/',
+            },
+          }],
+        },
         categories: {
           title: 'Categories',
           items: [{
             title: 'Breakfast',
+            nested: {
+              foo: 'eba',
+            },
             permalink: 'http://google.com/',
           }, {
             title: 'Fast',
