@@ -1,8 +1,6 @@
 <template>
   <aside class="widget widget_categories">
-      <h2 class="widget-title">
-        <span>{{title}}</span>
-      </h2>
+      <widget-header :title="title"></widget-header>
       <ul>
           <li v-for="item in items">
             <a href="{{item.permalink}}">{{item.title}}</a>
@@ -12,7 +10,12 @@
 </template>
 
 <script>
+  import WidgetHeader from './WidgetHeader';
+
   export default {
+    components: {
+      WidgetHeader,
+    },
     props: ['title', 'items'],
   };
 </script>

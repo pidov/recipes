@@ -1,8 +1,6 @@
 <template>
   <aside class="widget widget_tag_cloud">
-    <h2 class="widget-title">
-      <span>{{title}}</span>
-    </h2>
+    <widget-header :title="title"></widget-header>
     <div class="tagcloud">
         <a v-for="tag in tags" href="{{tag.permalink}}">
           {{tag.title}}
@@ -12,7 +10,12 @@
 </template>
 
 <script>
+  import WidgetHeader from './WidgetHeader';
+
   export default {
+    components: {
+      WidgetHeader,
+    },
     props: ['title', 'tags'],
   };
 </script>

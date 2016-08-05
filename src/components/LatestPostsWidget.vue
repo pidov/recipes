@@ -1,8 +1,6 @@
 <template>
   <aside class="widget">
-    <h2 class="widget-title">
-      <span>{{title}}</span>
-    </h2>
+    <widget-header :title="title"></widget-header>
     <div class="cs-widget_latest_posts">
       <post-teaser v-for="post in posts"
         :title="post.title"
@@ -17,10 +15,11 @@
 
 <script>
   import PostTeaser from './PostTeaser';
+  import WidgetHeader from './WidgetHeader';
 
   export default {
     components: {
-      PostTeaser,
+      PostTeaser, WidgetHeader,
     },
     props: ['title', 'posts'],
   };
