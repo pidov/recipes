@@ -57,7 +57,7 @@
 </template>
 
 <script>
-  import TagCloud from '../components/TagCloud';
+  import TagCloud from '../components/TagCloudWidget';
   import ListWidget from '../components/ListWidget';
 
   export default {
