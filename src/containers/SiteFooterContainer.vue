@@ -44,16 +44,12 @@
                   </aside>
               </div>
               <div class="cs-col cs-col-4-of-12">
-                  <aside class="widget widget_categories">
-                      <h2 class="widget-title"><span>Recipe categories</span></h2>
-                      <ul>
-                          <li><a href="#">Mexican food</a></li>
-                          <li><a href="#">Light salad</a></li>
-                          <li><a href="#">Sea-food</a></li>
-                          <li><a href="#">Low-Carb meat</a></li>
-                          <li><a href="#">White fried rice</a></li>
-                      </ul>
-                  </aside>
+                <list-widget
+                  :title="categories.title",
+                  :items="categories.items"
+                >
+
+                </list-widget>
               </div>
           </div>
       </div>
@@ -62,13 +58,30 @@
 
 <script>
   import TagCloud from '../components/TagCloud';
+  import ListWidget from '../components/ListWidget';
 
   export default {
     components: {
-      TagCloud,
+      TagCloud, ListWidget,
     },
     data() {
       return {
+        categories: {
+          title: 'Categories',
+          items: [{
+            title: 'Breakfast',
+            permalink: 'http://google.com/',
+          }, {
+            title: 'Fast',
+            permalink: 'http://google.com/',
+          }, {
+            title: 'Dinner',
+            permalink: 'http://google.com/',
+          }, {
+            title: 'Only once',
+            permalink: 'http://google.com/',
+          }],
+        },
         tagCloud: {
           title: 'Tag Clouda',
           tags: [{
