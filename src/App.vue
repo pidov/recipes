@@ -10,6 +10,8 @@
     <recipes-list
       :recipes="recipes">
     </recipes-list>
+    <site-footer>
+    </site-footer>
   </div>
 </template>
 
@@ -18,6 +20,7 @@
   import SiteHeader from './components/SiteHeader';
   import RecipesList from './containers/RecipesListContainer';
   import CategoriesContainer from './containers/CategoriesContainer';
+  import SiteFooter from './containers/SiteFooterContainer';
 
   export default {
     data() {
@@ -85,7 +88,7 @@
       };
     },
     components: {
-      Hello, SiteHeader, RecipesList, CategoriesContainer,
+      Hello, SiteHeader, RecipesList, CategoriesContainer, SiteFooter,
     },
   };
 </script>
