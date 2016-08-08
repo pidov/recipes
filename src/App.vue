@@ -11,6 +11,16 @@
       :recipes="recipes"
       title="Popular recipes">
     </recipes-list>
+    <div class="cs-container">
+      <div class="cs-row">
+        <div class="cs-col cs-col-6-of-12">
+          <check-list
+            :title="checkList.title"
+            :items="checkList.items">
+          </check-list>
+        </div>
+      </div>
+    </div>
     <site-footer>
     </site-footer>
   </div>
@@ -22,10 +32,27 @@
   import RecipesList from './containers/RecipesListContainer';
   import CategoriesContainer from './containers/CategoriesContainer';
   import SiteFooter from './containers/SiteFooterContainer';
+  import CheckList from './components/CheckList';
 
   export default {
     data() {
       return {
+        checkList: {
+          title: 'Ingredients',
+          items: [{
+            title: '4 eggs',
+            checked: false,
+          }, {
+            title: '300ml milk',
+            checked: false,
+          }, {
+            title: '2 potatoes eggs',
+            checked: true,
+          }, {
+            title: 'lulzs',
+            checked: false,
+          }],
+        },
         recipes: [{
           title: ' Musaka',
           preparationTime: 50,
@@ -97,7 +124,7 @@
       };
     },
     components: {
-      Hello, SiteHeader, RecipesList, CategoriesContainer, SiteFooter,
+      Hello, SiteHeader, RecipesList, CategoriesContainer, SiteFooter, CheckList,
     },
   };
 </script>
