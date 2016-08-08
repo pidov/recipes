@@ -14,6 +14,10 @@
     <div class="cs-container">
       <div class="cs-row">
         <div class="cs-col cs-col-6-of-12">
+          <page-title
+            :title="pageTitle.title"
+            :breadcrumbs="pageTitle.breadcrumbs">
+          </page-title>
           <check-list
             :title="checkList.title"
             :items="checkList.items">
@@ -40,10 +44,21 @@
   import SiteFooter from './containers/SiteFooterContainer';
   import CheckList from './components/CheckList';
   import StepsList from './components/StepsList';
+  import PageTitle from './components/PageTitle';
 
   export default {
     data() {
       return {
+        pageTitle: {
+          title: 'Musaka po banski',
+          breadcrumbs: [{
+            title: 'Az Recepti',
+            permalink: 'https://google.com/ncr',
+          }, {
+            title: 'Recepti s kartofi',
+            permalink: 'https://google.com/',
+          }],
+        },
         stepsList: {
           title: 'Preparation',
           items: [{
@@ -145,7 +160,7 @@
     },
     components: {
       Hello, SiteHeader, RecipesList, CategoriesContainer,
-      SiteFooter, CheckList, StepsList,
+      SiteFooter, CheckList, StepsList, PageTitle,
     },
   };
 </script>
