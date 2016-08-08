@@ -53,7 +53,7 @@
           }, {
             title: 'Cooking',
             duration: '30 minutes',
-            thumbnail: 'http://placehold.it/960x365',
+            thumbnail: 'http://placehold.it/960x635',
             body: 'This is not',
           }],
         },
