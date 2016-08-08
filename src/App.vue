@@ -19,6 +19,12 @@
             :items="checkList.items">
           </check-list>
         </div>
+        <div class="cs-col cs-col-6-of-12">
+          <steps-list
+            :title="stepsList.title"
+            :items="stepsList.items">
+          </steps-list>
+        </div>
       </div>
     </div>
     <site-footer>
@@ -33,10 +39,23 @@
   import CategoriesContainer from './containers/CategoriesContainer';
   import SiteFooter from './containers/SiteFooterContainer';
   import CheckList from './components/CheckList';
+  import StepsList from './components/StepsList';
 
   export default {
     data() {
       return {
+        stepsList: {
+          title: 'Preparation',
+          items: [{
+            title: 'Preparation',
+            duration: '30 minutes',
+            body: '<b> THis is bolded preparation step</b>',
+          }, {
+            title: 'Cooking',
+            duration: '30 minutes',
+            body: 'This is not',
+          }],
+        },
         checkList: {
           title: 'Ingredients',
           items: [{
@@ -124,7 +143,8 @@
       };
     },
     components: {
-      Hello, SiteHeader, RecipesList, CategoriesContainer, SiteFooter, CheckList,
+      Hello, SiteHeader, RecipesList, CategoriesContainer,
+      SiteFooter, CheckList, StepsList,
     },
   };
 </script>
