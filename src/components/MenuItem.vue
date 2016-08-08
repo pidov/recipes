@@ -1,5 +1,5 @@
 <template>
-<li class="kurec" v-bind:class="{ 'current-menu-item': isActive, }">
+<li v-bind:class="{ 'current-menu-item': isActive, }">
   <a href="{{url}}">
     <span v-if="children">{{title}}</span>
     <template v-if="!children">{{title}}</template>
