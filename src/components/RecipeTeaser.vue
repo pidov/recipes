@@ -1,5 +1,5 @@
 <template>
-  <li class="cs-recipe" >
+  <li class="cs-recipe" v-bind:class="{ 'last': index+1 %4 === 0}">
     <div class="cs-recipe-image">
       <div class="cs-recipe-details-button">
         <a href="{{permalink}}">Details</a>
@@ -25,6 +25,6 @@
 
 <script>
   export default {
-    props: ['title', 'permalink', 'portion', 'preparationTime', 'backgroundImage'],
+    props: ['title', 'permalink', 'portion', 'preparationTime', 'backgroundImage', 'index'],
   };
 </script>

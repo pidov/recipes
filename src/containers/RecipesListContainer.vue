@@ -11,6 +11,7 @@
       <ul class="cs-recipes">
         <!-- Recipe -->
         <recipe-teaser v-for="recipe in recipes"
+          :index="$index"
           :permalink="recipe.permalink"
           :title="recipe.title"
           :portion="recipe.portion"
