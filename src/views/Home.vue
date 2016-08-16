@@ -31,7 +31,7 @@
 
 <script>
   import Hello from '../components/Hello';
-  import SiteHeader from '../components/SiteHeader';
+  import SiteHeader from '../containers/SiteHeader';
   import RecipesList from '../containers/RecipesListContainer';
   import CategoriesContainer from '../containers/CategoriesContainer';
   import SiteFooter from '../containers/SiteFooterContainer';
