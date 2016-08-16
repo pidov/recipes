@@ -1,6 +1,6 @@
 <template>
 <li v-bind:class="{ 'current-menu-item': isActive, }">
-  <a href="{{url}}">
+  <a v-link="{ path: url }">
     <span v-if="children">{{title}}</span>
     <template v-if="!children">{{title}}</template>
   </a>

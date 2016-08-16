@@ -7,7 +7,9 @@
           <div class="cs-header-body-row">
             <!-- Logo brand image -->
             <div id="cs-logo-brand">
-              <a href="index.html"><img src="/static/main_files/demo/Bakery.png" alt="Bakery"></a>
+              <a href="/">
+                <img src="/static/main_files/demo/Bakery.png" alt="Bakery">
+              </a>
             </div><!-- end .cs-logo-brand -->
             <main-navigation :items="menuItems"></main-navigation>
           </div>
@@ -27,32 +29,17 @@
       return {
         menuItems: [{
           title: 'Home',
-          url: '#',
-          children: [{
-            title: 'Sub one',
-            url: '#SubOne',
-            children: [{
-              title: 'Going deep',
-              url: 'Deeper!',
-              children: [{
-                title: 'Next Level',
-                url: 'Deeper!',
-              }],
-            }],
-          }, {
-            title: 'Sub Twone',
-            url: '#SubOne',
-          }],
+          url: '/',
         }, {
-          title: 'About',
+          title: 'Recipes',
           active: true,
-          url: 'SecondURL',
+          url: '/recipes',
           children: [{
-            title: 'Sub one',
-            url: '#SubOne',
+            title: 'First Recipe',
+            url: '/recipes/first-cool-recipe',
           }, {
-            title: 'Sub one',
-            url: '#SubOne',
+            title: 'Second and last recipe',
+            url: '/recipes/second-cool-recipe',
           }],
         }],
       };
