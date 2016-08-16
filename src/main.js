@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import AppComponent from './App';
+import Home from './views/Home';
+import MainLayout from './layouts/Main';
 
 import VueRouter from 'vue-router';
 
@@ -11,10 +12,12 @@ const router = new VueRouter();
 
 router.map({
   '/': {
-    component: AppComponent,
-  },
-  '/bar': {
-    component: AppComponent,
+    component: MainLayout,
+    subRoutes: {
+      '/': {
+        component: Home,
+      },
+    },
   },
 });
 

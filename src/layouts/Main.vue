@@ -3,48 +3,21 @@
     <site-header
       :navigation-items="menuItems">
     </site-header>
-    <categories-container
-      :categories="teasers"
-      title="Recipe Categories">
-    </categories-container>
-    <recipes-list
-      :recipes="recipes"
-      title="Popular recipes">
-    </recipes-list>
-    <div class="cs-container">
-      <div class="cs-row">
-        <div class="cs-col cs-col-6-of-12">
-          <page-title
-            :title="pageTitle.title"
-            :breadcrumbs="pageTitle.breadcrumbs">
-          </page-title>
-          <check-list
-            :title="checkList.title"
-            :items="checkList.items">
-          </check-list>
-        </div>
-        <div class="cs-col cs-col-6-of-12">
-          <steps-list
-            :title="stepsList.title"
-            :items="stepsList.items">
-          </steps-list>
-        </div>
-      </div>
-    </div>
+      <router-view></router-view>
     <site-footer>
     </site-footer>
   </div>
 </template>
 
 <script>
-  import Hello from './components/Hello';
-  import SiteHeader from './components/SiteHeader';
-  import RecipesList from './containers/RecipesListContainer';
-  import CategoriesContainer from './containers/CategoriesContainer';
-  import SiteFooter from './containers/SiteFooterContainer';
-  import CheckList from './components/CheckList';
-  import StepsList from './components/StepsList';
-  import PageTitle from './components/PageTitle';
+  import Hello from '../components/Hello';
+  import SiteHeader from '../components/SiteHeader';
+  import RecipesList from '../containers/RecipesListContainer';
+  import CategoriesContainer from '../containers/CategoriesContainer';
+  import SiteFooter from '../containers/SiteFooterContainer';
+  import CheckList from '../components/CheckList';
+  import StepsList from '../components/StepsList';
+  import PageTitle from '../components/PageTitle';
 
   export default {
     data() {
