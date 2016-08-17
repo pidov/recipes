@@ -1,6 +1,6 @@
 <template>
   <div class="cs-recipe-category-block">
-    <a href="{{permalink}}">
+    <a v-link="{ path: permalink }">
       <div class="inner">
         <div class="border-frame"></div>
         <h3>{{title}}</h3>

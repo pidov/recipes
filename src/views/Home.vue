@@ -44,15 +44,15 @@
         teasers: [{
           title: ' Musaka',
           backgroundImage: 'https://placehold.it/328x120',
-          permalink: 'http://google.com',
+          permalink: 'recipes/1',
         }, {
           title: 'Musakata',
           backgroundImage: 'https://placehold.it/328x120',
-          permalink: 'http://google.com',
+          permalink: 'recipes/2',
         }, {
           title: 'Musaka',
           backgroundImage: 'https://placehold.it/328x120',
-          permalink: 'http://google.com',
+          permalink: 'recipes/1',
         }],
       };
     },

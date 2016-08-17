@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import HomeView from './views/Home';
 import RecipeView from './views/Recipe';
+import RecipesView from './views/Recipes';
 import MainLayout from './layouts/Main';
 
 import VueRouter from 'vue-router';
@@ -17,6 +18,9 @@ router.map({
     subRoutes: {
       '/': {
         component: HomeView,
+      },
+      '/recipes': {
+        component: RecipesView,
       },
       '/recipes/:slug': {
         component: RecipeView,
