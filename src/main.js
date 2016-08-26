@@ -12,7 +12,9 @@ Vue.use(VueRouter);
 
 const App = Vue.extend({});
 
-const router = new VueRouter();
+const router = new VueRouter({
+  history: true,
+});
 
 router.map({
   '/': {
