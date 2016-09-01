@@ -62,9 +62,6 @@
   export default {
     methods: {
       addStep() {
-        /* eslint-disable*/
-          console.log("HAH");
-        /* eslint-enable*/
         this.steps.push({
           content: '',
           thumbnail: 'http://placehold.it/960x365',
