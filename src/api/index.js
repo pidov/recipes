@@ -1,44 +1,27 @@
+import recipe from './schemas/recipe';
+import teaser from './schemas/teaser';
+
+function generateList(count, schemaGenerator) {
+  const arr = []; let i = 0;
+
+  if (typeof count !== 'number') return arr;
+  if (count < 1) return arr;
+
+  while (++i <= count) {
+    arr.push(schemaGenerator());
+  }
+
+  return arr;
+}
+
 module.exports = {
+  addRecipe(cb) {
+    cb(recipe());
+  },
   getRecipes(cb) {
-    cb([{
-      title: 'Musaka',
-      preparationTime: 50,
-      portion: 1,
-      backgroundImage: 'https://placehold.it/600x600',
-      permalink: 'http://google.com',
-    }, {
-      title: 'Musakata',
-      preparationTime: 20,
-      portion: 4,
-      backgroundImage: 'https://placehold.it/600x600',
-      permalink: 'http://google.com',
-    }, {
-      title: 'Musaka',
-      preparationTime: 30,
-      portion: 2,
-      backgroundImage: 'https://placehold.it/600x600',
-      permalink: 'http://google.com',
-    }, {
-      title: 'Musakata',
-      preparationTime: 60,
-      portion: 4,
-      backgroundImage: 'https://placehold.it/600x600',
-      permalink: 'http://google.com',
-    }]);
+    cb(generateList(12, recipe));
   },
   getTeasers(cb) {
-    cb([{
-      title: ' Musaka',
-      backgroundImage: 'https://placehold.it/328x120',
-      permalink: 'recipes/1',
-    }, {
-      title: 'Musakata',
-      backgroundImage: 'https://placehold.it/328x120',
-      permalink: 'recipes/2',
-    }, {
-      title: 'Musaka',
-      backgroundImage: 'https://placehold.it/328x120',
-      permalink: 'recipes/1',
-    }]);
+    cb(generateList(4, teaser));
   },
 };
