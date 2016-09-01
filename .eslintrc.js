@@ -12,6 +12,7 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
+    'no-param-reassign': 0,
     'import/no-unresolved': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0

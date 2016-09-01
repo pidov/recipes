@@ -1,6 +1,6 @@
 <template>
 <!-- Main content -->
-<div class="cs-container">
+<div class="cs-container" @click='incrementMethod'>
   <!-- Main content -->
   <div class="cs-main-content">
     <!-- Recipes category -->
@@ -27,11 +27,15 @@
 
 <script>
   import RecipeTeaser from '../components/RecipeTeaser';
-
   export default {
     props: ['recipes', 'title'],
     components: {
       RecipeTeaser,
+    },
+    methods: {
+      incrementMethod() {
+        this.increment();
+      },
     },
   };
 </script>
