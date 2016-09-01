@@ -57,7 +57,7 @@
 </template>
 
 <script>
-  import Api from '../../services/api';
+  import api from '../../api';
 
   export default {
     methods: {
@@ -71,7 +71,7 @@
         });
       },
       onSubmit() {
-        Api.addRecipe({
+        api.addRecipe({
           name: this.name,
           preparationTime: this.preparationTime,
           portions: this.portions,
