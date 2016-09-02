@@ -7,9 +7,13 @@
       <label for="title">Ingredients</label>
       <input type="text" name="Title" placeholder="Яйца, Мляко" v-model="ingredients">
     </p>
-    <p class="cs-col cs-col-12-of-12">
+    <p class="cs-col cs-col-6-of-12">
       <label for="title">Introduction</label>
       <textarea type="text" name="Title" placeholder="Муската е традиционна българска рецепта." v-model="intro"></textarea>
+    </p>
+    <p class="cs-col cs-col-6-of-12">
+      <label for="title">Preview</label>
+      <vue-markdown :source="intro"></vue-markdown>
     </p>
     <div class="cs-col cs-col-12-of-12">
       <div v-for="step in steps" class="cs-row step">
@@ -55,6 +59,7 @@
 
 <script>
   import api from '../../api';
+  import VueMarkdown from 'vue-markdown';
 
   export default {
     methods: {
@@ -111,6 +116,9 @@
       category: {
         type: String,
       },
+    },
+    components: {
+      VueMarkdown,
     },
   };
 </script>
