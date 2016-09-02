@@ -1,58 +1,55 @@
 <template id="">
   <form class="add-recipe" v-on:submit.prevent="onSubmit">
-    <div class="cs-row">
-      <p class="cs-col cs-col-12-of-12">
-        <label for="title">Recipe Name</label>
-        <input type="text" name="Title" placeholder="Мусака" v-model="name">
-      </p>
-      <p class="cs-col cs-col-12-of-12">
-        <label for="title">Ingredients</label>
-        <input type="text" name="Title" placeholder="Яйца, Мляко" v-model="ingredients">
-      </p>
-      <p class="cs-col cs-col-12-of-12">
-        <label for="title">Introduction</label>
-        <textarea type="text" name="Title" placeholder="Муската е традиционна българска рецепта." v-model="intro"></textarea>
-      </p>
-      <div class="cs-col cs-col-12-of-12">
-        <div v-for="step in steps" class="cs-row step">
-          <p class="cs-col cs-col-8-of-12">
-            <label for="title">Steps</label>
-            <textarea type="text" name="Title" placeholder="Първа стъпка от.." v-model=step.content></textarea>
-          </p>
-          <div class="cs-col cs-col-4-of-12">
-            <div class="thumbnail-add">
-              <label for="title">Image</label>
-              <img v-bind:src="step.thumbnail" alt="" />
-              <a class="cs-btn cs-btn-blue" >Add Step</a>
-            </div>
+    <p class="cs-col cs-col-12-of-12">
+      <input type="text" name="Title" autocomplete="off" placeholder="Въведи име..." v-model="name" class="form-element-title">
+    </p>
+    <p class="cs-col cs-col-12-of-12">
+      <label for="title">Ingredients</label>
+      <input type="text" name="Title" placeholder="Яйца, Мляко" v-model="ingredients">
+    </p>
+    <p class="cs-col cs-col-12-of-12">
+      <label for="title">Introduction</label>
+      <textarea type="text" name="Title" placeholder="Муската е традиционна българска рецепта." v-model="intro"></textarea>
+    </p>
+    <div class="cs-col cs-col-12-of-12">
+      <div v-for="step in steps" class="cs-row step">
+        <p class="cs-col cs-col-8-of-12">
+          <label for="title">Steps</label>
+          <textarea type="text" name="Title" placeholder="Първа стъпка от.." v-model=step.content></textarea>
+        </p>
+        <div class="cs-col cs-col-4-of-12">
+          <div class="thumbnail-add">
+            <label for="title">Image</label>
+            <img v-bind:src="step.thumbnail" alt="" />
+            <a class="cs-btn cs-btn-blue" >Add Step</a>
           </div>
         </div>
-        <a class="cs-btn cs-btn-blue" v-on:click="addStep">Add Step</a>
       </div>
-      <p class="cs-col cs-col-12-of-12">
-        <label for="title">Outro</label>
-        <textarea type="text" name="Title" placeholder="За да направите мусаката по-вкусна..." v-model="outro"></textarea>
-      </p>
-      <p class="cs-col cs-col-3-of-12">
-        <label for="title">Required Time</label>
-        <input type="text" name="Title" placeholder="30m" v-model="preparationTime">
-      </p>
-      <p class="cs-col cs-col-3-of-12">
-        <label for="title">Difficulty</label>
-        <input type="text" name="Title" placeholder="Easy" v-model="difficulty">
-      </p>
-      <p class="cs-col cs-col-3-of-12">
-        <label for="title">Category</label>
-        <input type="text" name="Title" placeholder="Месни" v-model="category">
-      </p>
-      <p class="cs-col cs-col-3-of-12">
-        <label for="title">Required Time</label>
-        <input type="text" name="Title" placeholder="30m" v-model="portions">
-      </p>
-      <p class="cs-col cs-col-12-of-12">
-        <input class="cs-btn cs-btn-blue" type="submit" name="name" value="Add Image">
-      </p>
+      <a class="cs-btn cs-btn-blue" v-on:click="addStep">Add Step</a>
     </div>
+    <p class="cs-col cs-col-12-of-12">
+      <label for="title">Outro</label>
+      <textarea type="text" name="Title" placeholder="За да направите мусаката по-вкусна..." v-model="outro"></textarea>
+    </p>
+    <p class="cs-col cs-col-3-of-12">
+      <label for="title">Required Time</label>
+      <input type="text" name="Title" placeholder="30m" v-model="preparationTime">
+    </p>
+    <p class="cs-col cs-col-3-of-12">
+      <label for="title">Difficulty</label>
+      <input type="text" name="Title" placeholder="Easy" v-model="difficulty">
+    </p>
+    <p class="cs-col cs-col-3-of-12">
+      <label for="title">Category</label>
+      <input type="text" name="Title" placeholder="Месни" v-model="category">
+    </p>
+    <p class="cs-col cs-col-3-of-12">
+      <label for="title">Required Time</label>
+      <input type="text" name="Title" placeholder="30m" v-model="portions">
+    </p>
+    <p class="cs-col cs-col-12-of-12">
+      <input class="cs-btn cs-btn-blue" type="submit" name="name" value="Add Image">
+    </p>
   </form>
 </template>
 
@@ -119,6 +116,25 @@
 </script>
 
 <style media="screen">
+  .add-recipe {
+    height: 500px;
+    padding: 20px;
+    overflow-y: scroll;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    background: #f2f2f2;
+    box-shadow: 0px 10px 20px 20px rgba(0,0,0,.2);
+  }
+
+  input[type="text"].form-element-title{
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+  }
   .thumbnail-add {
     text-align: center;
   }

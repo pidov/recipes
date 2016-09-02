@@ -1,5 +1,8 @@
 <template>
   <add-recipe></add-recipe>
+  <div>
+    Other shit
+  </div>
 </template>
 
 <script>
