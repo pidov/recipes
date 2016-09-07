@@ -48,11 +48,11 @@
       <input type="text" name="Title" placeholder="Месни" v-model="category">
     </p>
     <p class="cs-col cs-col-3-of-12">
-      <label for="title">Required Time</label>
-      <input type="text" name="Title" placeholder="30m" v-model="portions">
+      <label for="title">Portions</label>
+      <input type="text" name="Title" placeholder="4" v-model="portions">
     </p>
     <p class="cs-col cs-col-12-of-12">
-      <input class="cs-btn cs-btn-blue" type="submit" name="name" value="Add Image">
+      <input class="cs-btn cs-btn-blue" type="submit" name="name" value="Submit">
     </p>
   </form>
 </template>
@@ -61,7 +61,27 @@
   import api from '../../api';
   import VueMarkdown from 'vue-markdown';
 
+  const getInitialData = function getInitialData() {
+    return {
+      name: '',
+      ingredients: '',
+      intro: '',
+      steps: [{
+        content: '',
+        thumbnail: 'http://placehold.it/960x365',
+      }],
+      outro: '',
+      preparationTime: '',
+      difficulty: '',
+      portions: '',
+      category: '',
+    };
+  };
+
   export default {
+    data() {
+      return getInitialData();
+    },
     methods: {
       addStep() {
         this.steps.push({
@@ -69,52 +89,26 @@
           thumbnail: 'http://placehold.it/960x365',
         });
       },
+      clear() {
+        this.$data = getInitialData();
+      },
       onSubmit() {
+        const ingredients = this.ingredients && this.ingredients.split(',') || [];
         api.addRecipe({
-          name: this.name,
-          preparationTime: this.preparationTime,
-          portions: this.portions,
-          difficulty: this.difficulty,
+          title: this.name,
+          ingredients,
+          introduction: this.intro,
           preparationSteps: this.steps,
+          outro: this.outro,
+          preparationTime: this.preparationTime,
+          difficulty: this.difficulty,
+          category: this.category,
+          portions: this.portions,
+        }, (err, response) => {
+          if (err) return err;
+          this.clear();
+          return response;
         });
-        /* eslint-disable*/
-          console.log(this);
-        /* eslint-enable*/
-      },
-    },
-    props: {
-      name: {
-        type: String,
-      },
-      ingredients: {
-        type: Array,
-      },
-      intro: {
-        type: String,
-      },
-      steps: {
-        type: Array,
-        default() {
-          return [{
-            content: '',
-            thumbnail: 'http://placehold.it/960x365',
-          }];
-        },
-      },
-      outro: {
-        type: String,
-      },
-      preparationTime: {
-        type: Number,
-      },
-      difficulty: {
-        type: String,
-      },
-      portions: {
-        type: Number,
-      },
-      category: {
-        type: String,
       },
     },
     components: {
