@@ -119,7 +119,7 @@
 
 <style media="screen">
   .add-recipe {
-    height: 500px;
+    height: 300px;
     padding: 20px;
     overflow-y: scroll;
     position: fixed;
