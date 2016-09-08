@@ -3,7 +3,7 @@
       <widget-header :title="title"></widget-header>
       <ul>
           <li v-for="item in items">
-            <a href="{{item.permalink}}">{{item.title}}</a>
+            <a v-link="{ path: item.permalink }" >{{item.title}}</a>
           </li>
       </ul>
   </aside>
