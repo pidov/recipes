@@ -19,7 +19,6 @@
               <div class="cs-col cs-col-4-of-12">
                 <list-widget
                   title="Categories"
-                  nested="categories.nested"
                   :items="categories">
                 </list-widget>
               </div>
