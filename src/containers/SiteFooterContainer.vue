@@ -18,9 +18,9 @@
               </div>
               <div class="cs-col cs-col-4-of-12">
                 <list-widget
-                  :title="categories.title"
-                  :nested="categories.nested"
-                  :items="categories.items">
+                  title="Categories"
+                  nested="categories.nested"
+                  :items="categories">
                 </list-widget>
               </div>
           </div>
@@ -32,10 +32,22 @@
   import TagCloudWidget from '../components/TagCloudWidget';
   import ListWidget from '../components/ListWidget';
   import LatestPostsWidget from '../components/LatestPostsWidget';
+  import { getAllCategories } from '../vuex/categories/actions';
 
   export default {
     components: {
       TagCloudWidget, ListWidget, LatestPostsWidget,
+    },
+    created() {
+      this.getAllCategories();
+    },
+    vuex: {
+      getters: {
+        categories: ({ categories }) => categories.all,
+      },
+      actions: {
+        getAllCategories,
+      },
     },
     data() {
       return {
@@ -71,25 +83,6 @@
               title: 'Cool Category',
               permalink: 'http://localhost.com/',
             },
-          }],
-        },
-        categories: {
-          title: 'Categories',
-          items: [{
-            title: 'Breakfast',
-            nested: {
-              foo: 'eba',
-            },
-            permalink: 'http://google.com/',
-          }, {
-            title: 'Fast',
-            permalink: 'http://google.com/',
-          }, {
-            title: 'Dinner',
-            permalink: 'http://google.com/',
-          }, {
-            title: 'Only once',
-            permalink: 'http://google.com/',
           }],
         },
         tagCloud: {

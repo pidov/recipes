@@ -1,4 +1,5 @@
 import recipeCreator from './schemas/recipe';
+import categoriesCreator from './schemas/categories';
 import teaser from './schemas/teaser';
 
 import util from '../lib/util';
@@ -27,5 +28,10 @@ module.exports = {
   },
   getTeasers(cb) {
     cb(generateList(4, teaser));
+  },
+  getCategories(cb) {
+    if (util.isFunction(cb)) {
+      cb(null, generateList(5, categoriesCreator));
+    }
   },
 };

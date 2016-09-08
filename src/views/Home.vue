@@ -1,8 +1,8 @@
 <template>
-  <categories-container
+  <!--<categories-container
     :categories="teasers"
     title="Recipe Categories">
-  </categories-container>
+  </categories-container>-->
   <recipes-list
     :recipes="recipes"
     title="Popular recipes">
