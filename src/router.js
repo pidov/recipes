@@ -5,6 +5,7 @@ import HomeView from './views/Home';
 import AdminHomeView from './views/AdminHome';
 import RecipeView from './views/Recipe';
 import RecipesView from './views/Recipes';
+import CategoriesView from './views/CategoriesView';
 import MainLayout from './layouts/Main';
 import AdminLayout from './layouts/AdminMain';
 
@@ -27,6 +28,12 @@ router.map({
       },
       '/recipes/:slug': {
         component: RecipeView,
+      },
+      '/category': {
+        component: CategoriesView,
+      },
+      '/category/:slug': {
+        component: CategoriesView,
       },
     },
   },
