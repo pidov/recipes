@@ -1,8 +1,21 @@
-import App from './components/App';
-import router from './router';
-import store from './vuex/store';
-import { sync } from 'vuex-router-sync';
+// import App from './components/App';
+// import router from './router';
 
-sync(store, router);
+// router.start(App, '#app');
 
-router.start(App, '#app');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { browserHistory, Router, Route, IndexRoute } from 'react-router';
+
+import MainLayout from './layouts/Main';
+import HomeView from './views/Home';
+
+
+ReactDOM.render((
+  <Router>
+    <Route path="/" component={MainLayout}>
+      <IndexRoute component={HomeView} />
+    </Route>
+  </Router>),
+  document.getElementById('app')
+);
